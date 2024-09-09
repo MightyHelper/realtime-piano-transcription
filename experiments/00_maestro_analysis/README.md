@@ -1,0 +1,1 @@
+por algun motivo, la suma redondeando para arriba da quedeberia haber 57344.0 splits, pero en realidad tenemos 57969

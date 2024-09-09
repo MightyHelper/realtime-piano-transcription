@@ -1,0 +1,16 @@
+jupyter
+tensorflow[and-cuda]
+matplotlib~=3.9.2
+scikit-learn
+pandas==2.0.0
+numpy~=1.26.3
+seaborn
+librosa~=0.10.2.post1
+pretty_midi~=0.2.10
+sounddevice
+tqdm~=4.66.5
+mir_eval~=0.7
+hypothesis
+soundfile
+torch~=2.4.1+cu124
+ipython
