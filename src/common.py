@@ -135,6 +135,7 @@ class MaestroAudio:
         from IPython.display import Audio, display
         if end_seconds is None:
             end_seconds = self.duration
+        print(f"Displaying audio from {start_seconds} to {end_seconds}")
         display(Audio(
             self.audio[int(start_seconds * self.rate):int(end_seconds * self.rate)],
             rate=self.rate

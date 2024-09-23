@@ -4,6 +4,8 @@ from src.common import MaestroSplitType, MaestroDataset, MaestroSplit, MaestroAu
 from functools import cache
 from textwrap import dedent
 
+LOWEST_MIDI_NOTE = 21
+HIGHEST_MIDI_NOTE = 108
 
 class MaestroDatasetSplit(Dataset):
     split_type: MaestroSplitType
@@ -24,7 +26,7 @@ class MaestroDatasetSplit(Dataset):
         audio: MaestroAudio = item.load_audio
         midi: MidiWrapper = item.load_midi
         mel = audio.compute_log_mel_spectrogram()
-        roll = midi.get_piano_roll()
+        roll = midi.get_piano_roll()[LOWEST_MIDI_NOTE:HIGHEST_MIDI_NOTE]
 
         mel_duration_frames = mel.shape[1]
         roll_duration_frames = roll.shape[1]
@@ -115,7 +117,7 @@ class DynamicBatchIterableDataset2(IterableDataset):
     def __iter__(self):
         worker_info = get_worker_info()
         if worker_info is None:  # Single-process data loading
-            dataset_iter = iter(self.original_dataset)
+            dataset_iter = range(len(self.original_dataset))
         else:  # In multi-process loading, split the workload
             worker_id = worker_info.id
             num_workers = worker_info.num_workers

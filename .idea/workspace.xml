@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_midi.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/00_plot_stats.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/00_plot_stats.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/01_split_audios.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/01_split_audios.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/02_compute_real_length.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/01_compute_real_length.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maestro2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,27 +39,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.01_split_audios.executor": "Run",
-    "Python.02_combine_splits.executor": "Run",
-    "Python.02_compute_real_length.executor": "Run",
-    "Python.maestro.executor": "Run",
-    "Python.model.executor": "Run",
-    "Python.test_model_on_dataset.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/disk/disk01/GitHub/ssh",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "PyConsoleConfigurable.Python Console",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.01_split_audios.executor&quot;: &quot;Run&quot;,
+    &quot;Python.02_combine_splits.executor&quot;: &quot;Run&quot;,
+    &quot;Python.02_compute_real_length.executor&quot;: &quot;Run&quot;,
+    &quot;Python.maestro.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_model_on_dataset.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/disk/disk01/GitHub/ssh&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Jupyter Settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="realtime-piano-transcription" is-module-sdk="true">
@@ -259,6 +262,8 @@
       <workItem from="1726931075253" duration="20000" />
       <workItem from="1727039759052" duration="14501000" />
       <workItem from="1727107693245" duration="253000" />
+      <workItem from="1727114939141" duration="2701000" />
+      <workItem from="1727118274573" duration="8742000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />
