@@ -7,6 +7,7 @@ from textwrap import dedent
 LOWEST_MIDI_NOTE = 21
 HIGHEST_MIDI_NOTE = 108
 
+
 class MaestroDatasetSplit(Dataset):
     split_type: MaestroSplitType
     split: MaestroSplit
@@ -60,10 +61,11 @@ class MaestroDatasetSplit(Dataset):
 
 
 class FrameContextDataset(Dataset):
-    def __init__(self, dataset: MaestroDatasetSplit, context_frames: int, predict_frames: int):
+    def __init__(self, dataset: MaestroDatasetSplit, context_frames: int, predict_frames: int, stride: int = 1):
         self.dataset = dataset
         self.context_frames = context_frames
         self.predict_frames = predict_frames
+        self.stride = stride
 
     @cache
     def __len__(self):
@@ -74,13 +76,15 @@ class FrameContextDataset(Dataset):
         # roll: (roll_keys, frames)
         mel, roll = self.dataset[index]
         # batch_size = frames - context_frames
-        batch_size = mel.shape[1] - self.context_frames
-        print(f"Batch size: {batch_size}")
+        batch_size = (mel.shape[1] - self.context_frames) // self.stride
         # (batch_size, mel_bins, context_frames)
-        mel_context = stack([mel[:, i:(i + self.context_frames)] for i in range(batch_size)])
+        mel_context = stack(
+            [mel[:, i * self.stride:(i * self.stride + self.context_frames)] for i in range(batch_size)])
         # (batch_size, roll_keys, predict_frames)
         roll_context = stack(
-            [roll[:, i + self.context_frames - self.predict_frames:i + self.context_frames] for i in range(batch_size)]
+            # [roll[:, i + self.context_frames - self.predict_frames:i + self.context_frames] for i in range(batch_size)]
+            [roll[:, i * self.stride + self.context_frames - self.predict_frames:i * self.stride + self.context_frames]
+             for i in range(batch_size)]
         )
         return mel_context, roll_context
 
@@ -148,8 +152,17 @@ class DynamicBatchIterableDataset2(IterableDataset):
     def __len__(self):
         return self.original_dataset.total_frame_count() // self.standard_batch_size
 
+
 def custom_collate_fn(batch):
     x_list, y_list = zip(*batch)
     x_batch = cat(x_list, dim=0)
     y_batch = cat(y_list, dim=0)
     return x_batch, y_batch
+
+
+def custom_normalize_batch(x, y) -> tuple[tensor, tensor]:
+    x = x.transpose(1, 2).unsqueeze(1).cuda()
+    y = y.transpose(1, 2).unsqueeze(1).cuda()
+    x = (x - x.mean()) / x.std()
+    y = y / 100.
+    return x, y

@@ -93,7 +93,7 @@ class MidiWrapper:
         return self.midi.get_end_time()
 
     @classmethod
-    def from_piano_roll(cls, piano_roll, fs=TimeKeeper.TARGET_MS_PER_FRAME, program=0, on_threshold: float = 0.5):
+    def from_piano_roll(cls, piano_roll, fs=TimeKeeper.TARGET_MS_PER_FRAME, program=0, on_threshold: float = 0.5, note_offset: int = 0):
         true_false_roll = piano_roll > on_threshold
         note_events = []
         for pitch in range(true_false_roll.shape[0]):
@@ -115,7 +115,7 @@ class MidiWrapper:
         for pitch, start, end in note_events:
             note = Note(
                 velocity=100,
-                pitch=pitch,
+                pitch=note_offset + pitch,
                 start=start / fs,
                 end=end / fs
             )

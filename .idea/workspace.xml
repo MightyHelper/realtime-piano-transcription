@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_midi.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" afterDir="false" />
+    <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="Working mireval">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maestro2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +46,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/disk/disk01/GitHub/ssh&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/disk/disk01/GitHub/jap-pos&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -214,9 +210,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.01_compute_real_length" />
       <item itemvalue="Python.01_split_audios" />
       <item itemvalue="Python.02_combine_splits" />
-      <item itemvalue="Python.01_compute_real_length" />
       <item itemvalue="Python.model" />
       <item itemvalue="Python.test_model_on_dataset" />
     </list>
@@ -263,7 +259,10 @@
       <workItem from="1727039759052" duration="14501000" />
       <workItem from="1727107693245" duration="253000" />
       <workItem from="1727114939141" duration="2701000" />
-      <workItem from="1727118274573" duration="8742000" />
+      <workItem from="1727118274573" duration="23058000" />
+      <workItem from="1727368336117" duration="1655000" />
+      <workItem from="1727387457200" duration="45000" />
+      <workItem from="1727728332380" duration="4445000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />
@@ -297,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727107751429</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Some progress training">
+      <option name="closed" value="true" />
+      <created>1727127110006</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727127110006</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +315,9 @@
     <MESSAGE value="Load tensor" />
     <MESSAGE value="Simple overfit to single sample" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Some progress training" />
+    <MESSAGE value="Working mireval" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working mireval" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/realtime_piano_transcription$01_split_audios.coverage" NAME="01_split_audios Coverage Results" MODIFIED="1726022115022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/00_maestro_analysis" />
