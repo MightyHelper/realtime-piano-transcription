@@ -14,3 +14,4 @@ hypothesis
 soundfile
 torch~=2.4.1+cu124
 ipython
+wandb

@@ -1,3 +1,5 @@
+from enum import StrEnum
+
 import torch
 import torch.nn.functional as F
 
@@ -77,3 +79,16 @@ def get_model2(n_predict: int, device: torch.device | str):
     ).to(device)
     return model
 
+
+class ModelVersion(StrEnum):
+    V1 = 'v1'
+    V2 = 'v2'
+
+def model_of(name: ModelVersion, n_predict: int, device: torch.device | str):
+    model_getter = {
+        ModelVersion.V1: get_model,
+        ModelVersion.V2: get_model2
+    }.get(name, None)
+    if model_getter is None:
+        raise ValueError(f"Invalid model version: {name}")
+    return model_getter(n_predict, device)

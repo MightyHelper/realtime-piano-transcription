@@ -315,3 +315,6 @@ class MaestroDataset:
     def get_real_duration(self, index: int) -> float:
         # return self.duration_csv[self.duration_csv.index == self.csv.iloc[index]['audio_filename']].iloc[0].values[0]
         return self.duration_csv.loc[self.csv.iloc[index]['audio_filename']].values[0]
+
+def midi_to_hz(midi):
+    return 440.0 * 2.0 ** ((midi - 69) / 12.0)

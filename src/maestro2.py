@@ -77,19 +77,19 @@ class FrameContextDataset(Dataset):
         mel, roll = self.dataset[index]
         # batch_size = frames - context_frames
         batch_size = (mel.shape[1] - self.context_frames) // self.stride
+        start_frame = lambda i: i * self.stride + self.context_frames - self.predict_frames
+        end_frame = lambda i: i * self.stride + self.context_frames
         # (batch_size, mel_bins, context_frames)
-        mel_context = stack(
-            [mel[:, i * self.stride:(i * self.stride + self.context_frames)] for i in range(batch_size)])
+        mel_context = stack([mel[:, start_frame(i):end_frame(i)] for i in range(batch_size)])
         # (batch_size, roll_keys, predict_frames)
         roll_context = stack(
             # [roll[:, i + self.context_frames - self.predict_frames:i + self.context_frames] for i in range(batch_size)]
-            [roll[:, i * self.stride + self.context_frames - self.predict_frames:i * self.stride + self.context_frames]
-             for i in range(batch_size)]
+            [roll[:, start_frame(i):end_frame(i)] for i in range(batch_size)]
         )
         return mel_context, roll_context
 
     def total_frame_count(self):
-        return self.dataset.total_frame_count()
+        return self.dataset.total_frame_count() // self.stride
 
 
 class DynamicBatchIterableDataset(IterableDataset):

@@ -46,7 +46,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/disk/disk01/GitHub/jap-pos&quot;,
+    &quot;last_opened_file_path&quot;: &quot;I:/wsl_data/WinNative/GitHub/realtime-piano-transcription/experiments/01_train_cnn&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -262,7 +262,8 @@
       <workItem from="1727118274573" duration="23058000" />
       <workItem from="1727368336117" duration="1655000" />
       <workItem from="1727387457200" duration="45000" />
-      <workItem from="1727728332380" duration="4445000" />
+      <workItem from="1727728332380" duration="20079000" />
+      <workItem from="1727954334427" duration="8496000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />
