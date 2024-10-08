@@ -5,10 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="Working mireval">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/00_plot_stats.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/00_plot_stats.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/01_compute_real_length.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/01_compute_real_length.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/maestro-v3.0.0-extended.csv" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/maestro-v3.0.0-extended.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/.ipynb_checkpoints/test_dataset-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/.ipynb_checkpoints/test_dataset-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/iterable_multi.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/iterable_multi.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model2.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_midi.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_midi.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_model_on_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_model_on_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maestro.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maestro2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/torch-requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/torch-requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -264,6 +289,10 @@
       <workItem from="1727387457200" duration="45000" />
       <workItem from="1727728332380" duration="20079000" />
       <workItem from="1727954334427" duration="8496000" />
+      <workItem from="1728312720808" duration="6041000" />
+      <workItem from="1728327676046" duration="2339000" />
+      <workItem from="1728340880067" duration="1211000" />
+      <workItem from="1728411123809" duration="1757000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />

@@ -1,0 +1,3 @@
+datasets_root: /mnt/e/datasets
+maestro_dataset_path: maestro/maestro-v3.0.0
+device: cpu

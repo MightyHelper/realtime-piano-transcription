@@ -4,6 +4,8 @@ from src.common import MaestroSplitType, MaestroDataset, MaestroSplit, MaestroAu
 from functools import cache
 from textwrap import dedent
 
+from src.config_loader import config
+
 LOWEST_MIDI_NOTE = 21
 HIGHEST_MIDI_NOTE = 108
 
@@ -161,8 +163,8 @@ def custom_collate_fn(batch):
 
 
 def custom_normalize_batch(x, y) -> tuple[tensor, tensor]:
-    x = x.transpose(1, 2).unsqueeze(1).cuda()
-    y = y.transpose(1, 2).unsqueeze(1).cuda()
+    x = x.transpose(1, 2).unsqueeze(1).to(config.device)
+    y = y.transpose(1, 2).unsqueeze(1).to(config.device)
     x = (x - x.mean()) / x.std()
     y = y / 100.
     return x, y

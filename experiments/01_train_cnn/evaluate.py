@@ -3,7 +3,7 @@ import numpy as np
 import torch
 from torch.nn import MSELoss
 from torch.utils.data import DataLoader
-from model import get_model2, model_of, ModelVersion
+from model import model_of, ModelVersion
 from src.maestro2 import LOWEST_MIDI_NOTE
 from src.common import MidiWrapper, midi_to_hz
 from src.maestro2 import custom_normalize_batch
