@@ -1,0 +1,3 @@
+[submodule "src/onsets-and-frames"]
+	path = src/onsets-and-frames
+	url = git@github.com:jongwook/onsets-and-frames.git

@@ -79,15 +79,49 @@ def get_model2(n_predict: int, device: torch.device | str):
     ).to(device)
     return model
 
+class DebugLayer(torch.nn.Module):
+    def forward(self, x):
+        if isinstance(x, (list, tuple)):
+            print(y.shape for y in x)
+        else:
+            print(x.shape)
+        return x
+
+class Model3(torch.nn.Module):
+    def __init__(self, n_predict: int):
+        super().__init__()
+        self.lstm = torch.nn.LSTM(229, 64, 16, batch_first=True, bidirectional=False)
+        self.linear = torch.nn.LazyLinear(87)
+        self.sigmoid = torch.nn.Sigmoid()
+
+    def forward(self, x):
+        # (N, 1, 128, X)
+        x = x.squeeze(1)
+        # (N, 128, X)
+        x, _ = self.lstm(x)
+        # (N, 128, 32)
+        x = self.linear(x)
+        # (N, 128, 87)
+        x = self.sigmoid(x)
+        # (N, 128, 87)
+        x = x.unsqueeze(1)
+        # (N, 1, 128, 87)
+        return x
+
+
+def get_model3(n_predict: int, device: torch.device | str):
+    return Model3(n_predict).to(device)
 
 class ModelVersion(StrEnum):
     V1 = 'v1'
     V2 = 'v2'
+    V3 = 'v3'
 
 def model_of(name: ModelVersion, n_predict: int, device: torch.device | str):
     model_getter = {
         ModelVersion.V1: get_model,
-        ModelVersion.V2: get_model2
+        ModelVersion.V2: get_model2,
+        ModelVersion.V3: get_model3
     }.get(name, None)
     if model_getter is None:
         raise ValueError(f"Invalid model version: {name}")

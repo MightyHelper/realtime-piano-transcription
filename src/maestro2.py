@@ -1,3 +1,4 @@
+import torch
 from torch import tensor, stack, cat
 from torch.utils.data import Dataset, IterableDataset, get_worker_info
 from src.common import MaestroSplitType, MaestroDataset, MaestroSplit, MaestroAudio, MidiWrapper, TimeKeeper
@@ -20,7 +21,6 @@ class MaestroDatasetSplit(Dataset):
         self.base_dataset = MaestroDataset()
         self.split = self.base_dataset.get_split(split_type)
 
-    @cache
     def __len__(self):
         return len(self.split.df_entries)
 
@@ -167,4 +167,11 @@ def custom_normalize_batch(x, y) -> tuple[tensor, tensor]:
     y = y.transpose(1, 2).unsqueeze(1).to(config.device)
     x = (x - x.mean()) / x.std()
     y = y / 100.
+    # # If nan in y, replace with 0
+    # y[y != y] = 0
+    # x[x != x] = 0
+    # x = x.interpolate()
+    # y = y.interpolate()
+    x = torch.nan_to_num(x, nan=0.0)
+    y = torch.nan_to_num(y, nan=0.0)
     return x, y

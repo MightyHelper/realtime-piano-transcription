@@ -221,11 +221,13 @@ class DatasetEntry:
   def from_dict(cls, d: DatasetEntryDict):
     return cls(**d)
 
-  @cached_property
+  # @cached_property
+  @property
   def load_midi(self) -> MidiWrapper:
     return MidiWrapper(PrettyMIDI(str(config.maestro_dataset_root / self.midi_filename)), Path(self.midi_filename))
 
-  @cached_property
+  # @cached_property
+  @property
   def load_audio(self) -> MaestroAudio:
     """Load the associated WAV file"""
     self.logger.info(f"Loading audio {self.audio_filename} ({id(self)})")
@@ -239,7 +241,8 @@ class DatasetEntry:
       rate = self.AUDIO_RATE
     return MaestroAudio(rate, audio_data, relative_path=Path(self.audio_filename))
 
-  @cached_property
+  # @cached_property
+  @property
   def csv_duration(self) -> int:
     return MaestroDataset().duration_csv.loc[self.audio_filename].values[0]
 

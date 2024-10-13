@@ -1,5 +1,6 @@
 import torch
 import wandb
+from torch import Tensor
 from torch.nn import MSELoss
 from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
@@ -22,12 +23,12 @@ def init_wandb():
         "learning_rate": 1e-5,
         "epochs": 4,
         "batch_size": 12,
-        "num_workers": 2,
+        "num_workers": 16,
         "n_context": 128,
         "n_predict": 128,
       },
       "device": config.device,
-      "architecture": ModelVersion.V2.value,
+      "architecture": ModelVersion.V3.value,
       "dataset": {
         "name": "MAESTRO",
         "split": MaestroSplitType.TRAIN.value,
@@ -77,14 +78,17 @@ def train_single_epoch(data_loader, epoch, loss, model, optimizer):
     for idx, (x, y) in enumerate(data_loader):
       x, y = custom_normalize_batch(x, y)
       optimizer.zero_grad()
-      output = model(x)
+      output: Tensor = model(x)
       loss_val = loss(output, y)
       loss_val.backward()
       optimizer.step()
       total_loss += loss_val.item()
       pbar.update(1)
-      w.log({'train_loss': loss_val.item(), 'epoch': epoch, 'batch': idx})
-      pbar.set_description(f'Epoch {epoch} - Loss-so-far: {loss_val.item()}')
+      parameter_norm = sum(p.norm().item() ** 2 for p in model.parameters())
+      predict_wide = output.max() - output.min()
+      predict_norm = output.norm()
+      w.log({'train_loss': loss_val.item(), 'epoch': epoch, 'batch': idx, 'parameter_norm': parameter_norm, 'predict_wide': predict_wide, 'predict_norm': predict_norm})
+      pbar.set_description(f'E:{epoch} - L:{loss_val.item()} - ParN: {parameter_norm} - PreW:{predict_wide} - PreN:{predict_norm}')
     text = f'Epoch {epoch} - Loss: {total_loss}'
     pbar.set_description(text)
 

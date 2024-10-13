@@ -11,11 +11,71 @@ from src.common import MaestroSplitType
 from src.maestro2 import MaestroDatasetSplit, FrameContextDataset, DynamicBatchIterableDataset2, custom_collate_fn
 from matplotlib import pyplot as plt
 
-if __name__ == '__main__':
+
+def main():
+    train_loader = prepare_dataset()
+    x, y, y_ = prepare_model(train_loader)
+    slices = []
+    for i in range(y_.shape[0]):
+        evaluate_batch(i, slices, x, y, y_)
+    plt.imsave("imgs/all.png", np.hstack(slices), cmap='gray')
+    plt.imshow(np.hstack(slices), cmap='gray', interpolation='none')
+    plt.show()
+
+
+def evaluate_batch(i, slices, x, y, y_):
+    xnp = x[i, 0].transpose(0, 1).cpu().detach().numpy()
+    y_np = y_[i, 0].transpose(0, 1).cpu().detach().numpy()
+    ynp = y[i, 0].transpose(0, 1).cpu().detach().numpy()
+    midiw = MidiWrapper.from_piano_roll(y_np, note_offset=LOWEST_MIDI_NOTE)
+    midiw2 = MidiWrapper.from_piano_roll(ynp, note_offset=LOWEST_MIDI_NOTE)
+    pm1 = midiw.midi
+    pm2 = midiw2.midi
+    computed_mse = MSELoss()(y, y_)
+    notes1 = [(note.start, note.end, midi_to_hz(note.pitch)) for note in pm1.instruments[0].notes]
+    notes2 = [(note.start, note.end, midi_to_hz(note.pitch)) for note in pm2.instruments[0].notes]
+    # Convert to the format required by mir_eval: intervals and pitches
+    ref_intervals = np.array([[note[0], note[1]] for note in notes1]).reshape(-1, 2)
+    ref_pitches = np.array([note[2] for note in notes1])
+    est_intervals = np.array([[note[0], note[1]] for note in notes2]).reshape(-1, 2)
+    est_pitches = np.array([note[2] for note in notes2])
+    # Compute F1 score using mir_eval
+    precision, recall, f1, _ = mir_eval.transcription.precision_recall_f1_overlap(
+        ref_intervals, ref_pitches, est_intervals, est_pitches
+    )
+    print(f"Batch {i} Precision: {precision}, Recall: {recall}, F1 Score: {f1}")
+    print(f"Computed MSE: {computed_mse}")
+    items = [
+        (xnp - xnp.min()) / (xnp.max() - xnp.min()),
+        np.zeros_like(xnp[0:25, :]),
+        (y_np - y_np.min()) / (y_np.max() - y_np.min()),
+        np.ones_like(xnp[0:25, :]),
+        (ynp - ynp.min()) / (ynp.max() - ynp.min())
+    ]
+    for item in items:
+        print(item.shape, item.min(), item.max())
+    # Save the piano roll as an image
+    # disable interpolation
+    vstack = np.vstack(items)
+    plt.imsave(f"imgs/batch_{i}.png", vstack, cmap='gray')
+    slices.append(vstack)
+
+
+def prepare_model(train_loader):
+    model = model_of(ModelVersion.V3, 4, 'cuda')
+    model.load_state_dict(torch.load('model_flowing-grass-102.pth', weights_only=True))
+    model.eval()
+    x, y = next(iter(train_loader))
+    x, y = custom_normalize_batch(x, y)
+    y_ = model.forward(x)
+    return x, y, y_
+
+
+def prepare_dataset():
     dataset = MaestroDatasetSplit(MaestroSplitType.TRAIN)
     print(len(dataset.split.entries))
-    loader = FrameContextDataset(dataset, 32, 32, 32)
-    iterable_loader = DynamicBatchIterableDataset2(loader, 4)
+    loader = FrameContextDataset(dataset, 128, 128, 128)
+    iterable_loader = DynamicBatchIterableDataset2(loader, 12)
     train_loader = DataLoader(
         iterable_loader,
         batch_size=1,  # Let the collate_fn handle the final batching
@@ -26,58 +86,8 @@ if __name__ == '__main__':
         pin_memory=True,
         pin_memory_device='cuda',
     )
+    return train_loader
 
-    model = model_of(ModelVersion.V2, 4, 'cuda')
-    model.load_state_dict(torch.load('model_6643467814334053095.pth', weights_only=True))
-    model.eval()
 
-    x, y = next(iter(train_loader))
-    x, y = custom_normalize_batch(x, y)
-    y_ = model.forward(x)
-
-    slices = []
-
-    for i in range(y_.shape[0]):
-        xnp = x[i, 0].transpose(0, 1).cpu().detach().numpy()
-        y_np = y_[i, 0].transpose(0, 1).cpu().detach().numpy()
-        ynp = y[i, 0].transpose(0, 1).cpu().detach().numpy()
-        midiw = MidiWrapper.from_piano_roll(y_np, note_offset=LOWEST_MIDI_NOTE)
-        midiw2 = MidiWrapper.from_piano_roll(ynp, note_offset=LOWEST_MIDI_NOTE)
-        pm1 = midiw.midi
-        pm2 = midiw2.midi
-        computed_mse = MSELoss()(y, y_)
-        computed_mse.item()
-        notes1 = [(note.start, note.end, midi_to_hz(note.pitch)) for note in pm1.instruments[0].notes]
-        notes2 = [(note.start, note.end, midi_to_hz(note.pitch)) for note in pm2.instruments[0].notes]
-
-        # Convert to the format required by mir_eval: intervals and pitches
-        ref_intervals = np.array([[note[0], note[1]] for note in notes1]).reshape(-1, 2)
-        ref_pitches = np.array([note[2] for note in notes1])
-        est_intervals = np.array([[note[0], note[1]] for note in notes2]).reshape(-1, 2)
-        est_pitches = np.array([note[2] for note in notes2])
-
-        # Compute F1 score using mir_eval
-        precision, recall, f1, _ = mir_eval.transcription.precision_recall_f1_overlap(
-            ref_intervals, ref_pitches, est_intervals, est_pitches
-        )
-
-        print(f"Batch {i} Precision: {precision}, Recall: {recall}, F1 Score: {f1}")
-        print(f"Computed MSE: {computed_mse}")
-        items = [
-            xnp,
-            np.zeros_like(xnp[0:25, :]),
-            y_np,
-            np.ones_like(xnp[0:25, :]),
-            ynp,
-        ]
-        for item in items:
-            print(item.shape)
-        # Save the piano roll as an image
-        #disable interpolation
-        vstack = np.vstack(items)
-        plt.imsave(f"imgs/batch_{i}.png", vstack, cmap='gray')
-        slices.append(vstack)
-
-    plt.imsave("imgs/all.png", np.hstack(slices), cmap='gray')
-    plt.imshow(np.hstack(slices), cmap='gray', interpolation='none')
-    plt.show()
+if __name__ == '__main__':
+    main()
