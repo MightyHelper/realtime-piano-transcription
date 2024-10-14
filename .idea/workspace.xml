@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="checkpoint">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/onsets-and-frames" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -38,6 +37,11 @@
       <change beforePath="$PROJECT_DIR$/src/execution_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution_config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maestro.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maestro2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onsets-and-frames" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/mel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/mel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/torch-requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/torch-requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,27 +69,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.01_split_audios.executor&quot;: &quot;Run&quot;,
-    &quot;Python.02_combine_splits.executor&quot;: &quot;Run&quot;,
-    &quot;Python.02_compute_real_length.executor&quot;: &quot;Run&quot;,
-    &quot;Python.maestro.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_model_on_dataset.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;I:/wsl_data/WinNative/GitHub/realtime-piano-transcription/experiments/01_train_cnn&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Jupyter Settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.01_split_audios.executor": "Run",
+    "Python.02_combine_splits.executor": "Run",
+    "Python.02_compute_real_length.executor": "Run",
+    "Python.maestro.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.test_model_on_dataset.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "I:/wsl_data/WinNative/GitHub/realtime-piano-transcription/experiments/01_train_cnn",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="realtime-piano-transcription" is-module-sdk="true">
@@ -96,6 +100,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\wsl_data\WinNative\GitHub\realtime-piano-transcription\models" />
       <recent name="I:\wsl_data\WinNative\GitHub\realtime-piano-transcription\src" />
       <recent name="\\wsl.localhost\Ubuntu\disk\disk01\GitHub\realtime-piano-transcription\realtime-piano-transcription\experiments\00_maestro_analysis" />
     </key>
@@ -299,7 +304,10 @@
       <workItem from="1728340880067" duration="1211000" />
       <workItem from="1728411123809" duration="9561000" />
       <workItem from="1728473274208" duration="8026000" />
-      <workItem from="1728830767391" duration="3031000" />
+      <workItem from="1728830767391" duration="3766000" />
+      <workItem from="1728919331130" duration="1372000" />
+      <workItem from="1728922229460" duration="4812000" />
+      <workItem from="1728928294263" duration="1911000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />
@@ -341,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727127110006</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="checkpoint">
+      <option name="closed" value="true" />
+      <created>1728838215914</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728838215914</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
