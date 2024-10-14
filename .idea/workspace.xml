@@ -49,6 +49,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="repository" />
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -307,7 +312,7 @@
       <workItem from="1728830767391" duration="3766000" />
       <workItem from="1728919331130" duration="1372000" />
       <workItem from="1728922229460" duration="4812000" />
-      <workItem from="1728928294263" duration="1911000" />
+      <workItem from="1728928294263" duration="2256000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />
@@ -362,6 +367,23 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Split dataset" />
