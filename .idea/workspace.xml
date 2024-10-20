@@ -4,45 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="checkpoint">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/realtime-piano-transcription.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="CRLF?">
+      <change afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/dataset_preparation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/inference.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/midi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/test_mpl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/00_plot_stats.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/00_plot_stats.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/01_compute_real_length.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/01_compute_real_length.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/00_maestro_analysis/maestro-v3.0.0-extended.csv" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/00_maestro_analysis/maestro-v3.0.0-extended.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/.ipynb_checkpoints/test_dataset-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/.ipynb_checkpoints/test_dataset-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/evaluate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/iterable_multi.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/iterable_multi.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/model2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/model2.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_dataset.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_midi.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_midi.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_mireval.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/test_model_on_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/test_model_on_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/01_train_cnn/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/01_train_cnn/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config_loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/execution_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maestro.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maestro2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maestro2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maestro.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/mel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/mel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/torch-requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/torch-requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,27 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.01_split_audios.executor": "Run",
-    "Python.02_combine_splits.executor": "Run",
-    "Python.02_compute_real_length.executor": "Run",
-    "Python.maestro.executor": "Run",
-    "Python.model.executor": "Run",
-    "Python.test_model_on_dataset.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "I:/wsl_data/WinNative/GitHub/realtime-piano-transcription/experiments/01_train_cnn",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.01_split_audios.executor&quot;: &quot;Run&quot;,
+    &quot;Python.02_combine_splits.executor&quot;: &quot;Run&quot;,
+    &quot;Python.02_compute_real_length.executor&quot;: &quot;Run&quot;,
+    &quot;Python.maestro.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_model_on_dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_mpl.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;I:/wsl_data/WinNative/GitHub/train-se&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="realtime-piano-transcription" is-module-sdk="true">
@@ -110,7 +88,7 @@
       <recent name="\\wsl.localhost\Ubuntu\disk\disk01\GitHub\realtime-piano-transcription\realtime-piano-transcription\experiments\00_maestro_analysis" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_model_on_dataset">
+  <component name="RunManager" selected="Python.test_mpl">
     <configuration name="01_compute_real_length" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="realtime-piano-transcription" />
       <option name="ENV_FILES" value="" />
@@ -129,29 +107,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="01_split_audios" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="realtime-piano-transcription" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/00_maestro_analysis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/00_maestro_analysis/01_split_audios.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
@@ -249,20 +204,43 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_mpl" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="realtime-piano-transcription" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/02_transform_part_of_model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/02_transform_part_of_model/test_mpl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.01_compute_real_length" />
-      <item itemvalue="Python.01_split_audios" />
       <item itemvalue="Python.02_combine_splits" />
       <item itemvalue="Python.model" />
       <item itemvalue="Python.test_model_on_dataset" />
+      <item itemvalue="Python.test_mpl" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_mpl" />
         <item itemvalue="Python.test_model_on_dataset" />
         <item itemvalue="Python.01_compute_real_length" />
         <item itemvalue="Python.model" />
         <item itemvalue="Python.02_combine_splits" />
-        <item itemvalue="Python.01_split_audios" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +290,7 @@
       <workItem from="1728830767391" duration="3766000" />
       <workItem from="1728919331130" duration="1372000" />
       <workItem from="1728922229460" duration="4812000" />
-      <workItem from="1728928294263" duration="2256000" />
+      <workItem from="1728928294263" duration="31695000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />
@@ -362,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728838215914</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CRLF?">
+      <option name="closed" value="true" />
+      <created>1728930586141</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728930586141</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +379,8 @@
     <MESSAGE value="Some progress training" />
     <MESSAGE value="Working mireval" />
     <MESSAGE value="checkpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkpoint" />
+    <MESSAGE value="CRLF?" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRLF?" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/realtime_piano_transcription$01_split_audios.coverage" NAME="01_split_audios Coverage Results" MODIFIED="1726022115022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/00_maestro_analysis" />

@@ -3,7 +3,7 @@ tensorflow[and-cuda]
 matplotlib~=3.9.2
 scikit-learn
 pandas==2.0.0
-numpy~=1.26.3
+numpy==1.26.4
 seaborn
 librosa~=0.10.2.post1
 pretty_midi~=0.2.10
@@ -11,8 +11,15 @@ sounddevice
 tqdm~=4.66.5
 mir_eval~=0.7
 hypothesis
-soundfile
+soundfile~=0.12.1
 torch~=2.4.1+cu124
 ipython
-wandb
-pydantic
+wandb~=0.18.1
+pydantic~=2.9.2
+
+PyYAML~=6.0.1
+scipy~=1.14.1
+mido~=1.3.2
+joblib~=1.4.2
+sacred~=0.8.6
+pillow~=10.2.0
