@@ -7,6 +7,8 @@ from pathlib import Path
 import numpy as np
 import torch
 from matplotlib import pyplot as plt
+from tensorboard.summary.v1 import audio
+from torch.nn.utils import clip_grad_norm_
 from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader, Dataset
 from tqdm.auto import tqdm
@@ -79,20 +81,29 @@ def to_batch(data, index, sequence_length=None):
   device = config.device
   if sequence_length is not None:
     audio_length = len(data['audio'])
-    step_begin = random.randint(audio_length - sequence_length) // config.hop_length
+    data_length = data['label'].shape[0]
+    smalest_length = min(audio_length, data_length * config.hop_length)
+    step_begin = random.randint(smalest_length - sequence_length) // config.hop_length
     n_steps = sequence_length // config.hop_length
     step_end = step_begin + n_steps
 
     begin = step_begin * config.hop_length
     end = begin + sequence_length
 
+    print(f"{begin} {end}")
+    print(f"{step_begin} {step_end}")
+    print(f"{audio_length} {data_length} {smalest_length}")
+    print(f"{data['audio'].shape}")
+    print(f"{data['label'].shape}")
+    print(f"{data['velocity'].shape}")
     result['audio'] = data['audio'][begin:end].to(device)
     result['label'] = data['label'][step_begin:step_end, :].to(device)
     result['velocity'] = data['velocity'][step_begin:step_end, :].to(device)
   else:
-    result['audio'] = data['audio'].to(device)
-    result['label'] = data['label'].to(device)
-    result['velocity'] = data['velocity'].to(device).float()
+    raise NotImplementedError
+    # result['audio'] = data['audio'].to(device)
+    # result['label'] = data['label'].to(device)
+    # result['velocity'] = data['velocity'].to(device).float()
 
   # Assert result['audio'] values are floats between -1 and 1
 
@@ -103,7 +114,7 @@ def to_batch(data, index, sequence_length=None):
   result['onset'] = (result['label'] == 3).float()
   result['offset'] = (result['label'] == 1).float()
   result['frame'] = (result['label'] > 1).float()
-  result['velocity'] = result['velocity'].float().div_(128.0)
+  result['velocity'] = result['velocity'].float()
 
   # Print min and max values for each tensor
   print('audio', result['audio'].min().cpu().detach().item(), result['audio'].max().cpu().detach().item())
@@ -141,10 +152,10 @@ def train(num_iter: int = 2050):
   print(model)
   print(f"Parameters: {sum(p.numel() for p in model.parameters())}")
   optimizer = torch.optim.Adam(model.parameters(), learning_rate)
-  scheduler = StepLR(optimizer, step_size=learning_rate_decay_steps, gamma=learning_rate_decay_rate)
+  scheduler = StepLR(optimizer, step_size=learning_rate_decay_steps, gamma=learning_rate_decay_rate, verbose=True)
   with prediction_display_ctx() as pd:
     for batch,_ in zip(loader, range(1)):
-      for k in range(100):
+      for k in range(1000):
         accumulated_losses = {
           'loss/onset': 0,
           'loss/offset': 0,
@@ -152,15 +163,16 @@ def train(num_iter: int = 2050):
           'loss/velocity': 0,
           'loss': 0
         }
-        optimizer.zero_grad()
         prediction, loss = model.run_on_batch(batch)
-        loss['loss'] = sum(loss.values())
-        accumulated_losses = {x: accumulated_losses[x] + loss[x].cpu().detach().item() for x in accumulated_losses}
+        optimizer.zero_grad()
         loss['loss/onset'].backward()
         # loss['loss'].backward()
         optimizer.step()
         scheduler.step()
+        clip_grad_norm_(model.parameters(), 3)
         pd.send((prediction, batch))
+        loss['loss'] = sum(loss.values())
+        accumulated_losses = {x: accumulated_losses[x] + loss[x].cpu().detach().item() for x in accumulated_losses}
         print(prediction['onset'].shape)
         # Print std along time axis
         print(prediction['onset'].min().cpu().detach().item(), prediction['onset'].max().cpu().detach().item())
@@ -212,6 +224,8 @@ def prediction_display_ctx():
     pd.close()
 
 def evaluate():
+  # sys.path.insert(1, '/mnt/e/onsets-and-frames')
+  # model = load_real_trained_model()
   model = torch.load('model.pt').to(config.device)
   model.eval()
   with torch.no_grad():
@@ -219,10 +233,19 @@ def evaluate():
       mdpr = config.maestro_p_dataset_root
       wav_files = list(mdpr.glob('**/*.wav.npy'))
       # multiprocessing.set_start_method('spawn')
-      loader = DataLoader(MSTRODataset(wav_files), batch_size=16, shuffle=True)
+      loader = DataLoader(MSTRODataset(wav_files), batch_size=1, shuffle=True)
       for i, batch in zip(range(5), loader):
+        print({k: v.shape if hasattr(v, 'shape') else len(v) for k, v in batch.items()})
         prediction, loss = model.run_on_batch(batch)
         pd.send((prediction, batch))
 
+
+def load_real_trained_model():
+  import sys
+  sys.path.insert(1, '/mnt/i/wsl_data/WinNative/GitHub/realtime-piano-transcription/src/onsets-and-frames')
+  model = torch.load('/mnt/e/onsets-and-frames/runs/transcriber-241020-234142/model-500000.pt').to(config.device)
+  return model
+
+
 if __name__ == '__main__':
-  evaluate()
+  train()

@@ -58,8 +58,8 @@ def main():
   midi_files = list(mdr.glob('**/*.midi'))
   wav_files = list(mdr.glob('**/*.wav'))
   print(len(list(midi_files)), len(list(wav_files)))
-  # convert_midi_files(midi_files, [mdpr / file.relative_to(mdr).with_suffix('.midi.npy') for file in midi_files])
-  convert_audio_files(wav_files, [mdpr / file.relative_to(mdr).with_suffix('.wav.npy') for file in wav_files])
+  convert_midi_files(midi_files, [mdpr / file.relative_to(mdr).with_suffix('.midi.npy') for file in midi_files])
+  # convert_audio_files(wav_files, [mdpr / file.relative_to(mdr).with_suffix('.wav.npy') for file in wav_files])
 
 if __name__ == '__main__':
   main()

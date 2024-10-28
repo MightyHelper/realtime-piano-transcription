@@ -17,7 +17,7 @@ class Config(BaseModel):
     description='Path to the MAESTRO dataset CSV file'
   )
   maestro_duration_csv_path: Path = Field(Path("experiments") / "00_maestro_analysis" / "maestro-v3.0.0-extended.csv")
-  target_sample_rate: int = 2 ** 14
+  target_sample_rate: int = 16000  # 2 ** 14
   hop_length: int = target_sample_rate * 32 // 1000
   onset_length: int = target_sample_rate * 32 // 1000
   offset_length: int = target_sample_rate * 32 // 1000
