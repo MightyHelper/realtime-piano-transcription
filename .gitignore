@@ -1,2 +1,7 @@
 **/wandb/**
 **/__pycache__/**
+/v1/models/
+/v1/wandb/
+**/*.pt
+report/_texlive/
+/v1/imgs/

@@ -4,11 +4,276 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="onsets-and-frames">
+    <list default="true" id="b1799fed-acdb-483b-85fa-f29945008b83" name="Changes" comment="checkpoint">
+      <change afterPath="$PROJECT_DIR$/imgs/all.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_116.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_117.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_118.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_119.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_121.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_122.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_124.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_125.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_126.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_127.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_129.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_130.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_131.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_132.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_133.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_134.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_135.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_136.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_137.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_138.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_139.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_142.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_143.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_145.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_146.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_147.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_148.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_149.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_151.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_153.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_155.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_156.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_157.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_158.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_161.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_162.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_163.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_164.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_165.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_166.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_167.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_168.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_169.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_170.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_171.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_172.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_173.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_174.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_175.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_176.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_177.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_178.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_179.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_181.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_182.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_183.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_184.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_185.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_186.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_187.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_188.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_189.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_190.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_191.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_193.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_194.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_195.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_196.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_197.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_198.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_199.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_200.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_201.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_202.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_203.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_204.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_205.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_206.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_207.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_208.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_209.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_210.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_211.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_212.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_213.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_214.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_215.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_216.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_217.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_218.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_219.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_220.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_221.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_222.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_223.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_224.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_225.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_226.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_227.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_228.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_229.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_230.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_231.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_232.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_233.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_234.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_235.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_236.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_237.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_238.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_239.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_241.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_242.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_243.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_244.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_245.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_246.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_247.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_248.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_249.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_250.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_251.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_252.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_253.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_254.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_255.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_62.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_65.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_67.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_68.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_69.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_71.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_73.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_74.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_78.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_79.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_82.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_84.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_85.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_86.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_89.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_90.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_91.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_92.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_93.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_94.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_97.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_98.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/batch_99.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_-2801574889968504113.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_-350430486646381890.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_2443326431533825627.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_6550800032976946134.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_6643467814334053095.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_8136046449612822127.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_dauntless-donkey-93.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_flowing-grass-102.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_hearty-terrain-101.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_lively-morning-96.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/02_transform_part_of_model/dataset_preparation.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/dataset_preparation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/02_transform_part_of_model/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/02_transform_part_of_model/inference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/execution_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution_config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/onsets-and-frames/onsets_and_frames/dataset.py" afterDir="false" />
@@ -46,29 +311,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.01_split_audios.executor&quot;: &quot;Run&quot;,
-    &quot;Python.02_combine_splits.executor&quot;: &quot;Run&quot;,
-    &quot;Python.02_compute_real_length.executor&quot;: &quot;Run&quot;,
-    &quot;Python.inference.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.maestro.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_model_on_dataset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_mpl.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/onsets-and-frames&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.01_split_audios.executor": "Run",
+    "Python.02_combine_splits.executor": "Run",
+    "Python.02_compute_real_length.executor": "Run",
+    "Python.inference.executor": "Debug",
+    "Python.maestro.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.test_model_on_dataset.executor": "Run",
+    "Python.test_mpl.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/disk/disk01/GitHub/sat",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="realtime-piano-transcription" is-module-sdk="true">
@@ -224,11 +489,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.inference" />
-      <item itemvalue="Python.test_mpl" />
       <item itemvalue="Python.01_compute_real_length" />
+      <item itemvalue="Python.inference" />
       <item itemvalue="Python.model" />
       <item itemvalue="Python.test_model_on_dataset" />
+      <item itemvalue="Python.test_mpl" />
     </list>
     <recent_temporary>
       <list>
@@ -243,8 +508,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
-        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
+        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
       </set>
     </attachedChunks>
   </component>
@@ -290,7 +555,17 @@
       <workItem from="1729434360021" duration="3670000" />
       <workItem from="1729635836032" duration="5248000" />
       <workItem from="1729681907985" duration="3868000" />
-      <workItem from="1730143045088" duration="683000" />
+      <workItem from="1730143045088" duration="8860000" />
+      <workItem from="1730157753153" duration="2474000" />
+      <workItem from="1730308519167" duration="15924000" />
+      <workItem from="1732646134123" duration="4464000" />
+      <workItem from="1732652467347" duration="11904000" />
+      <workItem from="1733168885021" duration="2831000" />
+      <workItem from="1733176177521" duration="6760000" />
+      <workItem from="1733431370485" duration="252000" />
+      <workItem from="1734987036303" duration="1235000" />
+      <workItem from="1735583324787" duration="548000" />
+      <workItem from="1736098608003" duration="14536000" />
     </task>
     <task id="LOCAL-00001" summary="Split dataset">
       <option name="closed" value="true" />
@@ -356,7 +631,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729434564840</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="checkpoint">
+      <option name="closed" value="true" />
+      <created>1730145426134</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730145426134</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,10 +669,10 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Some progress training" />
     <MESSAGE value="Working mireval" />
-    <MESSAGE value="checkpoint" />
     <MESSAGE value="CRLF?" />
     <MESSAGE value="onsets-and-frames" />
-    <option name="LAST_COMMIT_MESSAGE" value="onsets-and-frames" />
+    <MESSAGE value="checkpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkpoint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

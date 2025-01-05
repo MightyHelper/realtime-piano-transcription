@@ -6,15 +6,17 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import wandb
 from matplotlib import pyplot as plt
-from tensorboard.summary.v1 import audio
 from torch.nn.utils import clip_grad_norm_
 from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader, Dataset
 from tqdm.auto import tqdm
 
+from src.common import MaestroSplitType
 from src.config_loader import config
 from model import OnsetsAndFrames
+
 
 
 def precompute(paths: tuple[Path, Path]) -> None:
@@ -58,7 +60,7 @@ def load_computed(audio_path):
   return torch.load(saved_data_path, weights_only=True)
 
 def precompute_files(files: list[tuple[Path, Path]]) -> None:
-  multiprocessing.set_start_method('spawn')
+  # multiprocessing.set_start_method('spawn')
   # torch.set_num_threads(1)
   with Pool() as p:
     list(tqdm(p.imap(precompute, files), total=len(files)))
@@ -75,10 +77,8 @@ def precompute_all_files() -> None:
 
 
 def to_batch(data, index, sequence_length=None):
-  # data = data[index:, :, :]
   result = dict(path=data['path'])
   random = np.random
-  device = config.device
   if sequence_length is not None:
     audio_length = len(data['audio'])
     data_length = data['label'].shape[0]
@@ -90,22 +90,11 @@ def to_batch(data, index, sequence_length=None):
     begin = step_begin * config.hop_length
     end = begin + sequence_length
 
-    print(f"{begin} {end}")
-    print(f"{step_begin} {step_end}")
-    print(f"{audio_length} {data_length} {smalest_length}")
-    print(f"{data['audio'].shape}")
-    print(f"{data['label'].shape}")
-    print(f"{data['velocity'].shape}")
-    result['audio'] = data['audio'][begin:end].to(device)
-    result['label'] = data['label'][step_begin:step_end, :].to(device)
-    result['velocity'] = data['velocity'][step_begin:step_end, :].to(device)
+    result['audio'] = data['audio'][begin:end]
+    result['label'] = data['label'][step_begin:step_end, :]
+    result['velocity'] = data['velocity'][step_begin:step_end, :]
   else:
     raise NotImplementedError
-    # result['audio'] = data['audio'].to(device)
-    # result['label'] = data['label'].to(device)
-    # result['velocity'] = data['velocity'].to(device).float()
-
-  # Assert result['audio'] values are floats between -1 and 1
 
   assert result['audio'].min() >= -1.0
   assert result['audio'].max() <= 1.0
@@ -116,69 +105,101 @@ def to_batch(data, index, sequence_length=None):
   result['frame'] = (result['label'] > 1).float()
   result['velocity'] = result['velocity'].float()
 
-  # Print min and max values for each tensor
-  print('audio', result['audio'].min().cpu().detach().item(), result['audio'].max().cpu().detach().item())
-  print('label', result['label'].min().cpu().detach().item(), result['label'].max().cpu().detach().item())
-  print('velocity', result['velocity'].min().cpu().detach().item(), result['velocity'].max().cpu().detach().item())
-  print('onset', result['onset'].min().cpu().detach().item(), result['onset'].max().cpu().detach().item())
-  print('offset', result['offset'].min().cpu().detach().item(), result['offset'].max().cpu().detach().item())
-  print('frame', result['frame'].min().cpu().detach().item(), result['frame'].max().cpu().detach().item())
-
 
   return result
 
 class MSTRODataset(Dataset):
   def __init__(self, paths: list[Path]):
-    self.paths = paths
+      self.paths = paths
 
   def __len__(self):
     return len(self.paths)
 
   def __getitem__(self, index):
     data = load_computed(self.paths[index])
-    return to_batch(data, 0, config.hop_length *900)
+    return to_batch(data, 0, config.hop_length * 320)
 
-def train(num_iter: int = 2050):
+@contextmanager
+def time_track():
+  import time
+  start = time.time()
+  yield
+  print(f"Time: {time.time() - start}")
+
+def train(train_size=4, complexity=48, eval_size=32):
+  print(f"Train {train_size} complexity {complexity}")
   mdpr = config.maestro_p_dataset_root
   wav_files = list(mdpr.glob('**/*.wav.npy'))
   learning_rate = 0.0006
-  learning_rate_decay_steps = 10000
+  learning_rate_decay_steps = 30
   learning_rate_decay_rate = 0.98
-  multiprocessing.set_start_method('spawn')
-  loader = DataLoader(MSTRODataset(wav_files), batch_size=2, shuffle=True)#, num_workers=4)
-  model_complexity = 48
+  # multiprocessing.set_start_method('spawn')
+  loader = DataLoader(MSTRODataset(wav_files), batch_size=4, shuffle=False, num_workers=1, pin_memory=config.device == 'cuda', pin_memory_device=config.device)
+  model_complexity = complexity
   model = OnsetsAndFrames(config.n_mels, config.max_midi - config.min_midi + 1, model_complexity)
   model.to(config.device)
-  print(model)
-  print(f"Parameters: {sum(p.numel() for p in model.parameters())}")
+  parameters = sum(p.numel() for p in model.parameters())
+  print(f"Parameters: {parameters}")
   optimizer = torch.optim.Adam(model.parameters(), learning_rate)
   scheduler = StepLR(optimizer, step_size=learning_rate_decay_steps, gamma=learning_rate_decay_rate, verbose=True)
+  lst = [*zip(loader, range(train_size))]
+  lst2 = [*zip(loader, range(eval_size))]
+  wandb.init(
+    # set the wandb project where this run will be logged
+    project="realtime-piano-transcription",
+
+    # track hyperparameters and run metadata
+    config={
+      "hyper": {
+        "learning_rate": learning_rate,
+        "learning_rate_decay_steps": learning_rate_decay_steps,
+        "learning_rate_decay_rate": learning_rate_decay_rate,
+        "train_size": train_size,
+        "complexity": complexity,
+        "eval_size": eval_size,
+        "epochs": 4,
+        "model_parameters": parameters,
+      },
+      "device": config.device,
+      "architecture": "OnsetsAndFrames",
+      "dataset": {
+        "name": "MAESTRO",
+        "split": MaestroSplitType.TRAIN.value,
+        "size": 940,
+      }
+    }
+  )
   with prediction_display_ctx() as pd:
-    for batch,_ in zip(loader, range(1)):
-      for k in range(1000):
-        accumulated_losses = {
-          'loss/onset': 0,
-          'loss/offset': 0,
-          'loss/frame': 0,
-          'loss/velocity': 0,
-          'loss': 0
-        }
-        prediction, loss = model.run_on_batch(batch)
-        optimizer.zero_grad()
-        loss['loss/onset'].backward()
-        # loss['loss'].backward()
-        optimizer.step()
-        scheduler.step()
-        clip_grad_norm_(model.parameters(), 3)
-        pd.send((prediction, batch))
-        loss['loss'] = sum(loss.values())
-        accumulated_losses = {x: accumulated_losses[x] + loss[x].cpu().detach().item() for x in accumulated_losses}
-        print(prediction['onset'].shape)
-        # Print std along time axis
-        print(prediction['onset'].min().cpu().detach().item(), prediction['onset'].max().cpu().detach().item())
-        # Print std along batch axis
-        torch.save(model, 'model.pt')
-        print(' '.join(f"{x}: {lz:.4f}" for x, lz in accumulated_losses.items()))
+    for _ in range(100):
+      for _ in range(100):
+        with time_track():
+          for batch, k in lst:
+            batch = {k: v.to(config.device) if hasattr(v, 'to') else v for k, v in batch.items()}
+            # Map over batch and copy to gpu
+            predictions, losses = model.run_on_batch(batch)
+            loss = sum(losses.values())
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            scheduler.step()
+            clip_grad_norm_(model.parameters(), 3)
+            # if z % 100 == 0:
+            #   print(loss.item())
+            wandb.log({k: v.item() for k, v in losses.items()})
+          print(">", loss.item())
+      pd.send((predictions, batch))
+      model.eval()
+      for batch, k in lst2:
+        batch = {k: v.to(config.device) if hasattr(v, 'to') else v for k, v in batch.items()}
+        predictions, losses = model.run_on_batch(batch)
+        loss = sum(losses.values())
+        wandb.log({k + "_val": v.item() for k, v in losses.items()})
+        print("Eval", loss.item())
+      model.train()
+  torch.save(model, f'model_train:{train_size}_compl:{complexity}.pt')
+  wandb.finish()
+  with open("results.txt", "a+") as f:
+    f.write(f"train:{train_size}_compl:{complexity} -> {loss.item()}\n")
 
 def prediction_display():
   with plt.ion():
@@ -226,16 +247,17 @@ def prediction_display_ctx():
 def evaluate():
   # sys.path.insert(1, '/mnt/e/onsets-and-frames')
   # model = load_real_trained_model()
-  model = torch.load('model.pt').to(config.device)
+  model = torch.load('model_xyzz.pt').to(config.device)
   model.eval()
   with torch.no_grad():
     with prediction_display_ctx() as pd:
       mdpr = config.maestro_p_dataset_root
       wav_files = list(mdpr.glob('**/*.wav.npy'))
       # multiprocessing.set_start_method('spawn')
-      loader = DataLoader(MSTRODataset(wav_files), batch_size=1, shuffle=True)
+      loader = DataLoader(MSTRODataset(wav_files), batch_size=1, shuffle=False, pin_memory=config.device == 'cuda', pin_memory_device=config.device)
       for i, batch in zip(range(5), loader):
         print({k: v.shape if hasattr(v, 'shape') else len(v) for k, v in batch.items()})
+        batch = {k: v.to(config.device) if hasattr(v, 'to') else v for k, v in batch.items()}
         prediction, loss = model.run_on_batch(batch)
         pd.send((prediction, batch))
 
@@ -243,9 +265,14 @@ def evaluate():
 def load_real_trained_model():
   import sys
   sys.path.insert(1, '/mnt/i/wsl_data/WinNative/GitHub/realtime-piano-transcription/src/onsets-and-frames')
-  model = torch.load('/mnt/e/onsets-and-frames/runs/transcriber-241020-234142/model-500000.pt').to(config.device)
+  # model = torch.load('/mnt/e/onsets-and-frames/runs/transcriber-241020-234142/model-500000.pt').to(config.device)
+  model = torch.load('model_xyz.pt').to(config.device)
   return model
 
 
 if __name__ == '__main__':
-  train()
+  for n_samples in (128,):
+    for model_complexity in (48,):
+      if n_samples == 16 and model_complexity == 32:
+        continue
+      train(n_samples, model_complexity)
